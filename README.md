@@ -1,6 +1,10 @@
-# My neovim config files
+# Neogruv
 
-This is a work in progress.
+My neovim config files, as stored in `$HOME/.config/nvim`. This is a work in progress.
+
+![Dashboard](photos/dashboard.png "Dashboard")
+
+![Editor](photos/editor.png "Editor")
 
 **Plugin manager:** Lazy.nvim
 
@@ -8,6 +12,8 @@ This is a work in progress.
 - Telescope
 - TreeSitter
 - Mason
+- Cmp
+- Whichkey
 - Lualine
 - Bufferline
 - Gruvbox

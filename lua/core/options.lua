@@ -1,3 +1,5 @@
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
+
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -5,13 +7,8 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
--- Example using a list of specs with the default options
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.opt.number = true
-
-
-vim.o.background = "dark" -- or "light" for light mode
-
+vim.o.background = "dark"
 vim.opt.list = true
 vim.opt.listchars:append("tab:> ")
 vim.opt.shiftwidth = 4

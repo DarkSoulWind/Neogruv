@@ -4,6 +4,7 @@ require('dashboard').setup({
     header = {
       "",
       "",
+      "",
 "         //                 /*",
 "      ,(/(//,               *###",
 "    ((((((////.             /####%*",
@@ -25,10 +26,11 @@ require('dashboard').setup({
 "        ./.                 #*",
       "",
       "",
+      "",
   },
     center = {
       {
-        icon = ' ',
+        icon = ' ',
         icon_hl = 'Title',
         desc = 'Find File           ',
         desc_hl = 'String',
@@ -47,6 +49,15 @@ require('dashboard').setup({
         action = ':bdelete'
       },
       {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Recent files           ',
+        desc_hl = 'String',
+        key = 'r',
+        key_hl = 'Number',
+        action = 'lua require("telescope.builtin").oldfiles()'
+      },
+      {
         icon = ' ',
         icon_hl = 'Title',
         desc = 'Find Text           ',
@@ -54,9 +65,20 @@ require('dashboard').setup({
         key = 't',
         key_hl = 'Number',
         action = 'lua require("telescope.builtin").live_grep()'
-      }
+      },
+      {
+        icon = ' ',
+        icon_hl = 'Title',
+        desc = 'Configuration           ',
+        desc_hl = 'String',
+        key = 'c',
+        keymap = '',
+        key_hl = 'Number',
+        action = ':e ~/.config/nvim/init.lua'
+      },
     },
     footer = {
+      "",
       "Welcome to Neogruv, Salman!",
       "Config by @DarkSoulWind",
     }
