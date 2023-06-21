@@ -21,7 +21,7 @@ vim.opt.cursorcolumn = true
 vim.opt.swapfile = false
 vim.opt.wrap = true
 vim.opt.ttyfast = true
--- vim.opt.spell = true
+--[[ vim.opt.spell = true ]]
 
 -- Relative line numbers
 vim.opt.rnu = true

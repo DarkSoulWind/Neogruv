@@ -24,6 +24,9 @@ vim.api.nvim_set_keymap("n", "<S-L>", ":BufferLineCycleNext<CR>", { noremap = tr
 -- Jump to a buffer
 vim.api.nvim_set_keymap("n", "<leader>bj", ":BufferLinePick<CR>", { noremap = true })
 
+-- Close buffer
+vim.api.nvim_set_keymap("n", "<leader>c", ":bdelete<CR>", { noremap = true })
+
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
