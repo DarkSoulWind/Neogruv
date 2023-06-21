@@ -1,0 +1,6 @@
+require("core.plugin.lazy")
+require("core.plugin.comment")
+require("core.plugin.treesitter")
+require("core.plugin.bufferline")
+require("core.plugin.lsp_config")
+require("lualine").setup()
