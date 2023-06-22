@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "pyright" }
+  ensure_installed = { "lua_ls", "pyright", "tsserver" }
 })
 
 local on_attach = function(_, _)
@@ -33,6 +33,10 @@ lsp.lua_ls.setup {
   }}
 }
 lsp.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+lsp.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }

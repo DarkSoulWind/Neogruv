@@ -12,6 +12,7 @@ My neovim config files, as stored in `$HOME/.config/nvim`. This is a work in pro
 - Telescope
 - TreeSitter
 - Mason
+- Null-ls
 - Cmp
 - Whichkey
 - Lualine
