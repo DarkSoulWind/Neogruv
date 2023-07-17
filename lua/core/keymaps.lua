@@ -25,10 +25,13 @@ vim.api.nvim_set_keymap("n", "<S-L>", ":BufferLineCycleNext<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<leader>bj", ":BufferLinePick<CR>", { noremap = true })
 
 -- Close buffer
-vim.api.nvim_set_keymap("n", "<leader>c", ":bdelete<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>c", ":bd<CR>", { noremap = true })
 
 -- Edit config file
-vim.api.nvim_set_keymap("n", "<leader>Nc", ":e ~/.config/nvim/init.lua", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>Nc", ":e $MYVIMRC<CR>", { noremap = true })
+
+-- Reload neovim without restarting neovim
+vim.api.nvim_set_keymap("n", "<leader>Ns", ":source $MYVIMRC<CR>", { noremap = true })
 
 -- Telescope
 local builtin = require('telescope.builtin')
@@ -38,3 +41,22 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
 
+-- Trouble
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.keymap.set("n", "<leader>lR", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
