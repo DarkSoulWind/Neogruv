@@ -12,5 +12,6 @@ null_ls.setup({
     formatting.djlint,
     formatting.beautysh,
     diagnostics.flake8,
+    diagnostics.xo,
   },
 })

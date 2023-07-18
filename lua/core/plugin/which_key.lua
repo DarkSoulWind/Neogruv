@@ -18,6 +18,7 @@ local mappings = {
 		b = { telescope.buffers, "View buffers" },
 		h = { telescope.help_tags, "Help tags" },
 		r = { telescope.oldfiles, "Recent files" },
+    c = { ":Telescope colorscheme<CR>", "Change colorscheme" },
 	},
 	l = {
 		name = "LSP",
@@ -38,7 +39,7 @@ local mappings = {
 	},
 	N = {
 		name = "Neogruv",
-    c = { ":e $MYVIMRC<CR>", "Edit config file" },
+    c = { ":edit $MYVIMRC<CR>", "Edit config file" },
     s = { ":source $MYVIMRC<CR>", "Restart Neogruv" },
 	},
 }

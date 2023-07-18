@@ -1,9 +1,9 @@
 --[[ these servers are only configured with the on_attach function and capabilities ]]
-local default_servers = {"pyright", "tsserver", "rust_analyzer", "cssls", "tailwindcss", "bashls", "taplo"}
+local default_servers = { "pyright", "tsserver", "rust_analyzer", "cssls", "tailwindcss", "bashls", "taplo" }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = default_servers
+	ensure_installed = default_servers,
 })
 
 local on_attach = function(_, _)
@@ -18,6 +18,7 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+
 local lsp = require("lspconfig")
 lsp.lua_ls.setup({
 	on_attach = on_attach,
@@ -28,20 +29,17 @@ lsp.lua_ls.setup({
 				globals = { "vim" },
 			},
 			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
+        library = vim.api.nvim_get_runtime_file("", true),
 			},
 		},
 	},
 })
 
 for _, server in pairs(default_servers) do
-  lsp[server].setup({
-    on_attach = on_attach,
-    capabilities = capabilities
-  })
+	lsp[server].setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
 end
 
 --[[ RUST TOOLS ]]

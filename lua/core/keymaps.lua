@@ -28,7 +28,7 @@ vim.api.nvim_set_keymap("n", "<leader>bj", ":BufferLinePick<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "<leader>c", ":bd<CR>", { noremap = true })
 
 -- Edit config file
-vim.api.nvim_set_keymap("n", "<leader>Nc", ":e $MYVIMRC<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>Nc", ":edit $MYVIMRC<CR>", { noremap = true })
 
 -- Reload neovim without restarting neovim
 vim.api.nvim_set_keymap("n", "<leader>Ns", ":source $MYVIMRC<CR>", { noremap = true })
