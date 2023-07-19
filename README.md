@@ -22,6 +22,7 @@ Designed to be an IDE layer similar to LunarVim, Neogruv is the embodiment of a 
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim) - statusline
 - [Bufferline](https://github.com/akinsho/bufferline.nvim) - buffers and tabs
 - [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim) - sexy
+- [Lspsaga](https://github.com/nvimdev/lspsaga.nvim) - sexier LSP experience
 - [Comment](https://github.com/numToStr/Comment.nvim) - comment toggling
 - [Autoclose](https://github.com/m4xshen/autoclose.nvim) - autoclose brackets, parentheses, braces etc.
 - [Dashboard](https://github.com/nvimdev/dashboard-nvim) - welcome to Neogruv

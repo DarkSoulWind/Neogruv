@@ -7,13 +7,13 @@ require("mason-lspconfig").setup({
 })
 
 local on_attach = function(_, _)
-	vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {})
-	vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, {})
+	vim.keymap.set("n", "<leader>lr", ":Lspsaga rename<CR>", {})
+	vim.keymap.set("n", "<leader>la", ":Lspsaga code_action<CR>", {})
 
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
 	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, {})
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+	vim.keymap.set("n", "K", ":Lspsaga hover_doc<CR>", {})
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()

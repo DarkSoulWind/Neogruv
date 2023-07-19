@@ -31,6 +31,14 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
+	--[[ lspsaga ]]
+	{
+		"nvimdev/lspsaga.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 	--[[ Trouble ]]
 	{
 		"folke/trouble.nvim",

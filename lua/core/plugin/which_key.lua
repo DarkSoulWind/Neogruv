@@ -24,10 +24,10 @@ local mappings = {
 		name = "LSP",
 		I = { ":Mason<CR>", "Mason" },
 		i = { ":LspInfo<CR>", "LSP info" },
-		a = { vim.lsp.buf.code_action, "Code action" },
-		r = { vim.lsp.buf.rename, "Rename" },
+		a = { ":Lspsaga code_action<CR>", "Code action" },
+		r = { ":Lspsaga rename<CR>", "Rename" },
 		f = { vim.lsp.buf.format, "Format" },
-		R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+		R = { ":Lspsaga finder<cr>", "Finder" },
 	},
 	x = {
 		name = "Trouble",
@@ -42,7 +42,13 @@ local mappings = {
     c = { ":edit $MYVIMRC<CR>", "Edit config file" },
     s = { ":source $MYVIMRC<CR>", "Restart Neogruv" },
 	},
+  t = {
+    name = "Terminal",
+    t = { ":Lspsaga term_toggle<CR>", "Toggle float terminal" },
+    s = { ":terminal<CR>", "Spawn terminal" },
+  }
 }
+
 local opts = { prefix = "<leader>" }
 
 wk.register(mappings, opts)
