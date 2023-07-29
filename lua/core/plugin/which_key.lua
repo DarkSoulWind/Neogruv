@@ -18,7 +18,7 @@ local mappings = {
 		b = { telescope.buffers, "View buffers" },
 		h = { telescope.help_tags, "Help tags" },
 		r = { telescope.oldfiles, "Recent files" },
-    c = { ":Telescope colorscheme<CR>", "Change colorscheme" },
+		c = { ":Telescope colorscheme<CR>", "Change colorscheme" },
 	},
 	l = {
 		name = "LSP",
@@ -26,7 +26,7 @@ local mappings = {
 		i = { ":LspInfo<CR>", "LSP info" },
 		a = { ":Lspsaga code_action<CR>", "Code action" },
 		r = { ":Lspsaga rename<CR>", "Rename" },
-		f = { vim.lsp.buf.format, "Format" },
+		f = { ":GuardFmt<CR>", "Format" },
 		R = { ":Lspsaga finder<cr>", "Finder" },
 	},
 	x = {
@@ -39,14 +39,14 @@ local mappings = {
 	},
 	N = {
 		name = "Neogruv",
-    c = { ":edit $MYVIMRC<CR>", "Edit config file" },
-    s = { ":source $MYVIMRC<CR>", "Restart Neogruv" },
+		c = { ":edit $MYVIMRC<CR>", "Edit config file" },
+		s = { ":source $MYVIMRC<CR>", "Restart Neogruv" },
 	},
-  t = {
-    name = "Terminal",
-    t = { ":Lspsaga term_toggle<CR>", "Toggle float terminal" },
-    s = { ":terminal<CR>", "Spawn terminal" },
-  }
+	t = {
+		name = "Terminal",
+		t = { ":Lspsaga term_toggle<CR>", "Toggle float terminal" },
+		s = { ":terminal<CR>", "Spawn terminal" },
+	},
 }
 
 local opts = { prefix = "<leader>" }

@@ -4,14 +4,12 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-  debug = false,
-  sources = {
-    formatting.prettier,
-    formatting.black,
-    formatting.stylua,
-    formatting.djlint,
+	debug = false,
+	sources = {
     formatting.beautysh,
-    diagnostics.flake8,
-    diagnostics.xo,
-  },
+		formatting.djlint,
+		diagnostics.flake8,
+		diagnostics.djlint,
+		diagnostics.xo,
+	},
 })

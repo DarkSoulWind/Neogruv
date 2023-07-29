@@ -28,3 +28,11 @@ vim.opt.sw = 2
 vim.opt.et = true
 vim.opt.ai = true
 vim.opt.si = true
+
+-- Enable highlighting when yanking
+vim.cmd([[
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=150})
+augroup END
+]])

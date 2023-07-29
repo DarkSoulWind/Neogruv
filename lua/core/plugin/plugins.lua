@@ -21,6 +21,7 @@ return {
 		tag = "0.1.1",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+
 	--[[ lsp_lines ]]
 	-- {
 	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -31,6 +32,7 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
+
 	--[[ lspsaga ]]
 	{
 		"nvimdev/lspsaga.nvim",
@@ -39,6 +41,12 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
+
+	--[[ guard.nvim ]]
+	{
+		"nvimdev/guard.nvim",
+	},
+
 	--[[ Trouble ]]
 	{
 		"folke/trouble.nvim",
@@ -129,12 +137,17 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
 	},
+  
 	--[[ Completions ]]
 	{ "hrsh7th/nvim-cmp" },
 	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
 	{ "L3MON4D3/LuaSnip" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "rafamadriz/friendly-snippets" },
+
 	--[[ Transparent background ]]
 	{
 		"xiyaowong/transparent.nvim",
