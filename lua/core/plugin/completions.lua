@@ -1,5 +1,6 @@
 local cmp = require("cmp")
 local compare = cmp.config
+local luasnip = require("luasnip")
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -37,7 +38,21 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		-- Add tab support
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
-		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			local copilot_keys = vim.fn["copilot#Accept"]()
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			elseif copilot_keys ~= "" and type(copilot_keys) == "string" then
+				vim.api.nvim_feedkeys(copilot_keys, "i", true)
+			else
+				fallback()
+			end
+		end, {
+			"i",
+			"s",
+		}),
 		["<C-S-f>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
@@ -51,12 +66,31 @@ cmp.setup({
 		end,
 	},
 
-	sources = cmp.config.sources({
+	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-	}),
+		{ name = "emmet" },
+		{
+			name = "emmet_vim",
+			option = {
+				filetypes = {
+					"html",
+					"xml",
+					"typescriptreact",
+					"javascriptreact",
+					"css",
+					"sass",
+					"scss",
+					"less",
+					"heex",
+					"tsx",
+					"jsx",
+				},
+			},
+		},
+	},
 
 	window = {
 		completion = cmp.config.window.bordered(),
@@ -77,27 +111,27 @@ cmp.setup({
 		end,
 	},
 
-	sorting = {
-		priority_weight = 1.0,
-		comparators = {
-			compare.offset,
-			compare.exact,
-			compare.score,
-			compare.kind,
-			-- compare.sort_text,
-			compare.length,
-			compare.order,
-		},
-	},
+	-- sorting = {
+	-- 	priority_weight = 1.0,
+	-- 	comparators = {
+	-- 		compare.offset,
+	-- 		compare.exact,
+	-- 		compare.score,
+	-- 		compare.kind,
+	-- 		-- compare.sort_text,
+	-- 		compare.length,
+	-- 		compare.order,
+	-- 	},
+	-- },
 })
 
 -- `/` cmdline setup.
-cmp.setup.cmdline("/", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = "buffer" },
-	},
-})
+-- cmp.setup.cmdline("/", {
+-- 	mapping = cmp.mapping.preset.cmdline(),
+-- 	sources = {
+-- 		{ name = "buffer" },
+-- 	},
+-- })
 
 -- `:` cmdline setup.
 cmp.setup.cmdline(":", {

@@ -6,10 +6,13 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-    formatting.beautysh,
+		formatting.beautysh,
 		formatting.djlint,
+		formatting.markdownlint,
 		diagnostics.flake8,
 		diagnostics.djlint,
-		diagnostics.xo,
+		diagnostics.jsonlint,
+		--[[ diagnostics.markdownlint, ]]
+		--[[ diagnostics.xo, ]]
 	},
 })

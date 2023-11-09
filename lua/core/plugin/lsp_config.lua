@@ -1,6 +1,6 @@
 --[[ these servers are only configured with the on_attach function and capabilities ]]
 local default_servers =
-	{ "pyright", "tsserver", "rust_analyzer", "cssls", "tailwindcss", "bashls", "taplo", "hls", "clangd" }
+	{ "pyright", "tsserver", "rust_analyzer", "cssls", "tailwindcss", "bashls", "hls", "taplo", "jsonls", "cmake", "marksman" }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -35,6 +35,14 @@ lsp.lua_ls.setup({
 		},
 	},
 })
+lsp.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}
 
 for _, server in pairs(default_servers) do
 	lsp[server].setup({

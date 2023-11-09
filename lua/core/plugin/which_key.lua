@@ -5,6 +5,7 @@ local mappings = {
 	q = { ":q<CR>", "Close window" },
 	w = { ":w<CR>", "Save" },
 	e = { ":NvimTreeToggle<CR>", "Toggle file explorer" },
+	m = { "<cmd>MinimapToggle<CR>", "Toggle minimap" },
 	c = { "<cmd>Bdelete<CR>", "Close buffer" },
 	["/"] = {},
 	b = {
